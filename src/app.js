@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import { dbConnection } from "./configs/dbConnection.js";
 
 import savingsRouter from "./routes/savingsRoutes.js";
+import paymentRecordsRouter from "./routes/paymentRecordsRoutes.js";
 
 dotenv.config();
 
@@ -26,5 +27,6 @@ app.use(express.static("images"));
 
 // Routes
 app.use("/savings", savingsRouter);
+app.use("/payment-records", paymentRecordsRouter);
 
 dbConnection(uri, port, app);
