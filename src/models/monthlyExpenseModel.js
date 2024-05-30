@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const monthlyExpenseSchema = new Schema(
   {
     month: {
-      type: Date,
+      type: String,
       required: true,
     },
     expenses: [

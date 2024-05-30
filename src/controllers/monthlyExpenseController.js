@@ -61,7 +61,9 @@ export const getSingleMonthlyExpenseController = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const monthlyExpense = await MonthlyExpense.findById({ _id: id });
+    const monthlyExpense = await MonthlyExpense.findById({ _id: id }).populate(
+      "expenses"
+    );
     res.status(200).json({
       message: "monthly expense fetched successfully!",
       payload: monthlyExpense,
@@ -76,7 +78,7 @@ export const getSingleMonthlyExpenseController = async (req, res) => {
 // Get All Monthly Expense
 export const getAllMonthlyExpenseController = async (req, res) => {
   try {
-    const monthlyExpenses = await MonthlyExpense.find({});
+    const monthlyExpenses = await MonthlyExpense.find({}).populate("expenses");
     res.status(200).json({
       message: "monthly expenses fetched successfully!",
       payload: monthlyExpenses,
