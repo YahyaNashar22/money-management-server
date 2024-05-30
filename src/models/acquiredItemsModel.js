@@ -20,7 +20,6 @@ const acquiredItemSchema = new Schema(
     slug: {
       type: String,
       unique: true,
-      required: true,
     },
   },
   {

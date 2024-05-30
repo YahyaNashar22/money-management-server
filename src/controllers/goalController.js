@@ -90,7 +90,7 @@ export const getSingleGoalController = async (req, res) => {
   }
 };
 
-// Get All Goal
+// Get All Goals
 export const getAllGoalController = async (req, res) => {
   try {
     const goals = await Goal.find({});
