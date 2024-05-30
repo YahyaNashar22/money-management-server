@@ -5,6 +5,11 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema(
   {
+    userName: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     fullName: {
       type: String,
       required: true,
@@ -19,6 +24,7 @@ const userSchema = new Schema(
     },
     role: {
       type: String,
+      default: "user",
       required: true,
     },
     slug: {

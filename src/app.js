@@ -13,6 +13,7 @@ import messageRouter from "./routes/messageRoutes.js";
 import goalRouter from "./routes/goalRoutes.js";
 import expenseRouter from "./routes/expenseRoutes.js";
 import acquiredItemRouter from "./routes/acquiredItemsRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -38,5 +39,6 @@ app.use("/message", messageRouter);
 app.use("/goal", goalRouter);
 app.use("/expense", expenseRouter);
 app.use("/acquired-item", acquiredItemRouter);
+app.use("/user", userRoutes);
 
 dbConnection(uri, port, app);
