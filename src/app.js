@@ -8,6 +8,8 @@ import { dbConnection } from "./configs/dbConnection.js";
 
 import savingsRouter from "./routes/savingsRoutes.js";
 import paymentRecordsRouter from "./routes/paymentRecordsRoutes.js";
+import monthlyExpenseRouter from "./routes/monthlyExpensesRoutes.js";
+import messageRouter from "./routes/messageRoutes.js";
 
 dotenv.config();
 
@@ -28,5 +30,7 @@ app.use(express.static("images"));
 // Routes
 app.use("/savings", savingsRouter);
 app.use("/payment-records", paymentRecordsRouter);
+app.use("/monthly-expense", monthlyExpenseRouter);
+app.use("/message", messageRouter);
 
 dbConnection(uri, port, app);
