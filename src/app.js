@@ -10,6 +10,7 @@ import savingsRouter from "./routes/savingsRoutes.js";
 import paymentRecordsRouter from "./routes/paymentRecordsRoutes.js";
 import monthlyExpenseRouter from "./routes/monthlyExpensesRoutes.js";
 import messageRouter from "./routes/messageRoutes.js";
+import goalRouter from "./routes/goalRoutes.js";
 
 dotenv.config();
 
@@ -32,5 +33,6 @@ app.use("/savings", savingsRouter);
 app.use("/payment-records", paymentRecordsRouter);
 app.use("/monthly-expense", monthlyExpenseRouter);
 app.use("/message", messageRouter);
+app.use("/goal", goalRouter);
 
 dbConnection(uri, port, app);

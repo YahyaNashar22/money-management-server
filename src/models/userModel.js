@@ -23,7 +23,6 @@ const userSchema = new Schema(
     },
     slug: {
       type: String,
-      required: true,
       unique: true,
     },
   },
